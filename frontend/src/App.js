@@ -1,61 +1,30 @@
-import React, { useState } from 'react';
-import './App.css'; // Import the CSS file for styling
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import TextToSpeech from './components/TextToSpeech';
+import ImageGenerator from './components/ImageGenerator';
+import './App.css'; // Import your CSS file
 
 function App() {
-    const [text, setText] = useState('');
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
-
-    const handleConvert = async () => {
-        setLoading(true);
-        setError('');
-
-        try {
-            const response = await fetch('http://localhost:5000/convert', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ text }),
-            });
-
-            if (response.ok) {
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = url;
-                a.download = 'myvoice.mp3';
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-            } else {
-                const errorData = await response.json();
-                throw new Error(errorData.error || 'Something went wrong!');
-            }
-        } catch (err) {
-            setError(err.message);
-        } finally {
-            setLoading(false);
-        }
-    };
-
     return (
-        <div className="app-container">
-            <h1>Text to Speech Converter</h1>
-            <textarea
-                className="text-input"
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                rows="4"
-                placeholder="Enter text here"
-            />
-            <br />
-            <button className="convert-button" onClick={handleConvert} disabled={loading}>
-                {loading ? 'Converting...' : 'Convert to Voice'}
-            </button>
-            {error && <p className="error-message">{error}</p>}
-        </div>
+        <Router>
+            <div className="app-container">
+                <nav>
+                    <ul className="navbar">
+                        <li>
+                            <Link to="/">Text to Speech</Link>
+                        </li>
+                        <li>
+                            <Link to="/image-generator">Image Generator</Link>
+                        </li>
+                    </ul>
+                </nav>
+
+                <Routes>
+                    <Route path="/" element={<TextToSpeech />} />
+                    <Route path="/image-generator" element={<ImageGenerator />} />
+                </Routes>
+            </div>
+        </Router>
     );
 }
 
