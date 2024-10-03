@@ -1,0 +1,51 @@
+.review-container {
+    max-width: 1200px;
+    margin: 20px auto; /* Reduced top margin to move it upwards */
+    padding: 20px;
+    text-align: center;
+}
+
+.review-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px; /* Reduced space below the title */
+}
+
+.reviews-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.review-item {
+    flex: 1;
+    margin: 10px; /* Space around each review item */
+    padding: 20px;
+    background-color: #fff; /* White background for each review */
+    border-radius: 8px; /* Increased rounded corners for individual review boxes */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for each review */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
+}
+
+.review-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+
+.review-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.review-rating {
+    display: flex; /* Align stars horizontally */
+    justify-content: center; /* Center stars */
+}
+
+.star {
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+    margin: 0 2px; /* Space between stars */
+}

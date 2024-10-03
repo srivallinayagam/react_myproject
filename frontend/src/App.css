@@ -1,0 +1,150 @@
+/* General Styles */
+html, body {
+  height: 100%; /* Full height for the HTML and body */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  font-family: 'Arial', sans-serif; /* Modern sans-serif font */
+  background-color: #e9ecef; /* Soft light gray for a modern look */
+  overflow: hidden;
+}
+
+.app-container {
+  flex: 1; /* Fill available space */
+  display: flex;
+  flex-direction: column; /* Align children in a column */
+}
+
+/* Header Styles */
+.app-header {
+  background-color: #343a40; /* Dark header background */
+  color: white; /* White text */
+  padding: 20px 0; /* Padding for header */
+  display: flex;
+  flex-direction: column; /* Stack title and navbar */
+  align-items: center; /* Center items horizontally */
+}
+
+.app-title {
+  margin: 0; /* Remove margin for title */
+  font-size: 36px; /* Adjusted font size for title */
+  font-weight: bold; /* Make title bold */
+  text-align: center; /* Center text */
+}
+
+/* Navbar Styles */
+.navbar {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center navbar items */
+  margin-top: 10px; /* Space between title and navbar */
+}
+
+.navbar li {
+  margin: 0 20px; /* Adjusted horizontal spacing */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white; /* White color for links */
+  font-weight: bold;
+  font-size: 18px; /* Consistent font size for readability */
+  transition: color 0.3s, transform 0.2s; /* Smooth transition effect */
+}
+
+.navbar a:hover {
+  color: #4CAF50; /* Green on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Main Content Styles */
+.app-main {
+  flex: 1; /* Fill available space */
+  display: flex;
+  justify-content: center; /* Center contents */
+  align-items: center; /* Center contents vertically */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden;
+  height: 70vh;
+}
+
+/* Footer Styles */
+.app-footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #343a40; /* Dark footer background */
+  color: white; /* White text */
+  width: 100%; /* Full width */
+  bottom: 0;
+  position: absolute;
+}
+
+/* Component Styles */
+.home-container, 
+.about-container, 
+.text-to-speech-container, 
+.image-generator-container {
+  width: 100%;
+  max-width: 600px; /* Max width for content */
+  padding: 20px; /* Padding for inner content */
+  border-radius: 8px; /* Rounded corners */
+  background: #fdfdfd; /* Slightly off-white for contrast */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin: 20px auto; /* Centered with margin for spacing */
+  text-align: center; /* Center text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Enhanced transitions */
+}
+
+.home-container:hover,
+.about-container:hover,
+.text-to-speech-container:hover,
+.image-generator-container:hover {
+  transform: translateY(-5px); /* Lift the component on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  background-color: #e0f7fa; /* Change background color on hover for visual feedback */
+}
+
+/* Input Styles */
+.text-input {
+  width: 100%; /* Full width for inputs */
+  height: 150px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  resize: none;
+  box-sizing: border-box; /* Include padding in total width */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth border color transition */
+}
+
+.text-input:focus {
+  border-color: #4CAF50; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Add glow effect on focus */
+}
+
+/* Button Styles */
+button {
+  padding: 10px 15px;
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 16px; /* Increase font size */
+  transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Error Message Styles */
+.error-message {
+  color: red; /* Red color for errors */
+  text-align: center;
+  margin-top: 10px;
+}

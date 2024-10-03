@@ -1,0 +1,48 @@
+.contact-container {
+    max-width: 600px; /* Centered container */
+    margin: 40px auto; /* Top margin for spacing */
+    padding: 30px; /* Increased padding for better spacing */
+    background: #fdfdfd; /* Off-white background */
+    border-radius: 12px; /* More rounded corners for a modern look */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Slightly more pronounced shadow */
+    text-align: center; /* Center text */
+}
+
+.contact-title {
+    font-size: 2rem; /* Larger title */
+    color: #333; /* Dark color for text */
+    margin-bottom: 20px; /* Space below title */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Increased space between form elements */
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px; /* Increased padding for comfort */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners for inputs */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+.contact-form button {
+    padding: 12px; /* Increased padding for the button */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s, transform 0.2s; /* Transition for hover */
+}
+
+.contact-form button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
