@@ -10,8 +10,8 @@ from tensorflow.keras.models import load_model
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-# # Load the trained image generation model
-# model = load_model('fruit_model.h5')
+# Load the trained image generation model
+model = load_model('fruit_model.h5')
 
 @app.route('/convert', methods=['POST'])
 def convert_text_to_voice():
@@ -29,21 +29,21 @@ def convert_text_to_voice():
 
     return jsonify({"error": "No text provided"}), 400
 
-# @app.route('/generate-image', methods=['POST'])
-# def generate_image():
-#     try:
-#         # Generate a random image for demonstration purposes
-#         random_image = np.random.rand(150, 150, 3) * 255
-#         img = Image.fromarray(random_image.astype('uint8'))
+@app.route('/generate-image', methods=['POST'])
+def generate_image():
+    try:
+        # Generate a random image for demonstration purposes
+        random_image = np.random.rand(150, 150, 3) * 255
+        img = Image.fromarray(random_image.astype('uint8'))
 
-#         # Save the image to a file
-#         img_path = "generated_image.png"
-#         img.save(img_path)
+        # Save the image to a file
+        img_path = "generated_image.png"
+        img.save(img_path)
 
-#         return send_file(img_path, as_attachment=True)
+        return send_file(img_path, as_attachment=True)
     
-#     except Exception as e:
-#         return jsonify({"error": str(e)}), 500
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
