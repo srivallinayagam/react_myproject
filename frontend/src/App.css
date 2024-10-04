@@ -18,7 +18,7 @@ body::before {
   left: 0; /* Align to the left */
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  background-image: url('./assets/a.jpg'); /* Ensure this path is correct */
+  background-image: url('./assets/a.jpg'); /* Ensure this path is correct for your image */
   background-size: cover; /* Cover the entire body */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent repeating */
@@ -38,6 +38,7 @@ body::before {
   display: flex;
   flex-direction: column; /* Stack title and navbar */
   align-items: center; /* Center items horizontally */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add shadow to header text */
 }
 
 .app-title {
@@ -45,6 +46,12 @@ body::before {
   font-size: 36px; /* Adjusted font size for title */
   font-weight: bold; /* Make title bold */
   text-align: center; /* Center text */
+  transition: transform 0.3s ease, text-shadow 0.3s ease; /* Transition for smooth effect */
+}
+
+.app-title:hover {
+  transform: translateY(-5px) scale(1.05); /* Lift and enlarge on hover */
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
 }
 
 /* Navbar Styles */
@@ -64,6 +71,11 @@ body::before {
 
 .navbar li {
   margin: 0 20px; /* Adjusted horizontal spacing */
+  transition: transform 0.3s ease; /* Smooth transition for list items */
+}
+
+.navbar li:hover {
+  transform: translateY(-3px); /* Lift navbar item on hover */
 }
 
 .navbar a {
@@ -77,37 +89,9 @@ body::before {
 }
 
 .navbar a:hover {
-  background-color: #4CAF50; /* Green background on hover */
+  background-color: rgba(76, 175, 80, 0.8); /* Green background on hover */
   color: white; /* Change text color on hover */
-  transform: scale(1.1); /* Slightly enlarge on hover */
-}
-
-/* Auth Navbar Styles */
-.auth-navbar {
-  list-style: none; /* Remove bullet points */
-  padding: 0; /* Remove default padding */
-  display: flex; /* Flex layout for alignment */
-  margin-left: auto; /* Push to the right */
-}
-
-.auth-navbar li {
-  margin: 0 15px; /* Adjusted horizontal spacing */
-}
-
-.auth-navbar a {
-  text-decoration: none;
-  color: white; /* Color for auth links */
-  font-weight: bold;
-  font-size: 18px; /* Consistent font size for readability */
-  transition: color 0.3s, transform 0.2s; /* Smooth transition effect */
-  padding: 5px 10px; /* Add padding for clickable area */
-  border-radius: 4px; /* Rounded corners for links */
-}
-
-.auth-navbar a:hover {
-  background-color: #ff5722; /* Orange background on hover */
-  color: white; /* Change text color on hover */
-  transform: scale(1.1); /* Slightly enlarge on hover */
+  transform: scale(1.1); /* Slightly enlarge link on hover */
 }
 
 /* Main Content Styles */
@@ -128,6 +112,7 @@ body::before {
   width: 100%; /* Full width */
   bottom: 0;
   position: absolute; /* Keep footer positioned relative */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Shadow for footer text */
 }
 
 /* Component Styles */
@@ -156,7 +141,7 @@ body::before {
 }
 
 /* Input Styles */
-.text-input {
+.text-input, .form-input {
   width: 100%; /* Full width for inputs */
   height: 150px; /* Input height */
   padding: 10px; /* Inner padding */
@@ -168,14 +153,14 @@ body::before {
   transition: border-color 0.3s, box-shadow 0.3s; /* Smooth border color transition */
 }
 
-.text-input:focus {
+.text-input:focus, .form-input:focus {
   border-color: #4CAF50; /* Highlight border on focus */
   outline: none; /* Remove default outline */
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Add glow effect on focus */
 }
 
 /* Button Styles */
-button {
+button, .form-button {
   padding: 10px 15px; /* Padding for buttons */
   background-color: #4CAF50; /* Green background */
   color: white; /* White text */
@@ -184,15 +169,16 @@ button {
   cursor: pointer; /* Pointer cursor on hover */
   font-size: 16px; /* Font size */
   transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+  width: auto; /* Auto width for buttons */
 }
 
-button:hover {
+button:hover, .form-button:hover {
   background-color: #45a049; /* Darker green on hover */
   transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Error Message Styles */
-.error-message {
+.error-message, .form-error-message {
   color: red; /* Red color for errors */
   text-align: center; /* Center text */
   margin-top: 10px; /* Space above the error message */
@@ -222,32 +208,40 @@ button:hover {
 .arrow::-webkit-scrollbar-track {
   background: rgba(240, 240, 240, 0.8); /* Background of the scrollbar track */
 }
+
 /* Form Container Styles */
 .form-container {
   width: 100%;
   max-width: 400px; /* Max width for forms */
-  padding: 20px; /* Padding for inner content */
-  border-radius: 8px; /* Rounded corners */
-  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white for contrast */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  margin: 20px auto; /* Centered with margin for spacing */
+  padding: 30px; /* Increased padding for comfort */
+  border-radius: 12px; /* More rounded corners for a modern look */
+  background: rgba(255, 255, 255, 0.95); /* Slightly transparent white for contrast */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  margin: 40px auto; /* Centered with margin for spacing */
   text-align: center; /* Center text */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Enhanced transitions */
 }
 
 .form-container:hover {
-  transform: translateY(-5px); /* Lift the component on hover */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  transform: translateY(-8px); /* Lift the component more on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Heading Styles */
+.form-title {
+  font-size: 24px; /* Larger title font size */
+  margin-bottom: 20px; /* Space below title */
+  color: #333; /* Darker color for title */
 }
 
 /* Input Styles for Forms */
 .form-input {
   width: 100%; /* Full width for inputs */
-  height: 40px; /* Input height */
+  height: 45px; /* Input height */
   padding: 10px; /* Inner padding */
-  margin: 10px 0; /* Margin around the input */
+  margin: 15px 0; /* Margin around the input */
   border: 1px solid #ccc; /* Light border */
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 8px; /* Rounded corners */
   box-sizing: border-box; /* Include padding in total width */
   transition: border-color 0.3s, box-shadow 0.3s; /* Smooth border color transition */
 }
@@ -260,11 +254,11 @@ button:hover {
 
 /* Button Styles for Forms */
 .form-button {
-  padding: 10px 15px; /* Padding for buttons */
+  padding: 12px 15px; /* Padding for buttons */
   background-color: #4CAF50; /* Green background */
   color: white; /* White text */
   border: none; /* Remove border */
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 8px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
   font-size: 16px; /* Font size */
   transition: background-color 0.3s, transform 0.2s; /* Transition effects */
@@ -280,21 +274,14 @@ button:hover {
 .switch-link {
   display: block; /* Block display for better layout */
   margin-top: 10px; /* Space above the link */
-  color: #4CAF50; /* Green color */
   text-decoration: none; /* Remove underline */
   transition: color 0.3s; /* Smooth color transition */
 }
 
 .switch-link:hover {
-  color: #388E3C; /* Darker green on hover */
+  text-decoration: underline;
 }
 
-/* Error Message Styles specific to forms */
-.form-error-message {
-  color: red; /* Red color for errors */
-  text-align: center; /* Center text */
-  margin-top: 10px; /* Space above the error message */
-}
 .social-buttons {
   display: flex; /* Use flexbox for horizontal layout */
   justify-content: center; /* Center the buttons */
@@ -312,19 +299,24 @@ button:hover {
   display: flex; /* Flex display to center the icon */
   justify-content: center; /* Center the icon horizontally */
   align-items: center; /* Center the icon vertically */
-  transition: background-color 0.3s; /* Smooth background transition */
+  transition: transform 0.3s; /* Smooth scale transition */
 }
 
 .social-button:hover {
-  background-color: rgba(76, 175, 80, 0.2); /* Light green background on hover */
+  /* Remove background color change on hover */
+  background-color: transparent; /* Keep the background transparent */
+  transform: scale(1.05); /* Optionally, you can scale slightly on hover */
 }
 
 .social-icon {
-  width: 24px; /* Adjust size of the icons */
-  height: auto; /* Maintain aspect ratio */
+  width: 40px; /* Adjust size of the icons */
+  height: 40px; /* Maintain aspect ratio */
   transition: opacity 0.3s; /* Smooth opacity transition */
 }
 
-.social-button:hover .social-icon {
-  opacity: 0.8; /* Slight opacity change on hover */
+/* Error Message Styles specific to forms */
+.form-error-message {
+  color: red; /* Red color for errors */
+  text-align: center; /* Center text */
+  margin-top: 10px; /* Space above the error message */
 }
