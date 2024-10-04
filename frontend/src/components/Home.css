@@ -1,7 +1,6 @@
 .home-wrapper {
   margin: 0 auto; /* Center the content */
   max-width: 1200px; /* Limit the width for the home section */
-  overflow-y: scroll;
 }
 
 .home-container {
@@ -24,4 +23,11 @@
   border-radius: 8px; /* Rounded corners */
   margin-top: 20px; /* Space above the reviews section */
   font-family: sans-serif; /* Apply sans-serif font */
+}
+.home-image {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0; /* Adjust margin as needed */
+  display: block;
+  /* Add more styles as needed */
 }

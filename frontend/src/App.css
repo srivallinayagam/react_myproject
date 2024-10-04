@@ -1,80 +1,133 @@
 /* General Styles */
 html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Roboto', sans-serif; /* Updated font */
-  background-color: #f4f4f4; /* Softer background color */
-  overflow: hidden;
+  height: 100%; /* Full height for the HTML and body */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  font-family: 'Arial', sans-serif; /* Modern sans-serif font */
+}
+
+body {
+  position: relative; /* Allows absolute positioning of the background */
+}
+
+/* Background Image */
+body::before {
+  content: '';
+  position: absolute; /* Absolute positioning to cover the body */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-image: url('./assets/a.jpg'); /* Ensure this path is correct */
+  background-size: cover; /* Cover the entire body */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating */
+  z-index: -1; /* Send it behind other content */
 }
 
 .app-container {
-  flex: 1;
+  height: 100%; /* Fill available height */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Align children in a column */
 }
 
 /* Header Styles */
 .app-header {
-  background-color: #212529; /* Dark header */
-  color: #f8f9fa; /* Light text */
-  padding: 20px;
+  color: white; /* Text color */
+  padding: 20px 0; /* Padding for header */
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; /* Stack title and navbar */
+  align-items: center; /* Center items horizontally */
 }
 
 .app-title {
-  margin: 0;
-  font-size: 28px; /* Slightly smaller font size */
+  margin: 0; /* Remove margin for title */
+  font-size: 36px; /* Adjusted font size for title */
+  font-weight: bold; /* Make title bold */
+  text-align: center; /* Center text */
 }
 
 /* Navbar Styles */
+.navbar-container {
+  padding: 10px; /* Padding inside the navbar box */
+  border-radius: 8px; /* Rounded corners for the navbar box */
+  transition: background-color 0.3s; /* Smooth background transition */
+}
+
 .navbar {
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  justify-content: center; /* Center navbar items */
+  margin-top: 10px; /* Space between title and navbar */
 }
 
 .navbar li {
-  margin: 0 15px; /* Adjusted spacing */
+  margin: 0 20px; /* Adjusted horizontal spacing */
 }
 
 .navbar a {
   text-decoration: none;
-  color: #f8f9fa; /* Light text */
-  font-weight: 600; /* Slightly bolder */
-  font-size: 16px; /* More uniform font size */
-  transition: color 0.3s, transform 0.2s;
+  color: white; /* Darker color for links */
+  font-weight: bold;
+  font-size: 18px; /* Consistent font size for readability */
+  transition: color 0.3s, transform 0.2s; /* Smooth transition effect */
+  padding: 5px 10px; /* Add padding for clickable area */
+  border-radius: 4px; /* Rounded corners for links */
 }
 
 .navbar a:hover {
-  color: #28a745; /* Brighter color on hover */
-  transform: scale(1.05); /* Enlarge effect */
+  background-color: #4CAF50; /* Green background on hover */
+  color: white; /* Change text color on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Auth Navbar Styles */
+.auth-navbar {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Flex layout for alignment */
+  margin-left: auto; /* Push to the right */
+}
+
+.auth-navbar li {
+  margin: 0 15px; /* Adjusted horizontal spacing */
+}
+
+.auth-navbar a {
+  text-decoration: none;
+  color: white; /* Color for auth links */
+  font-weight: bold;
+  font-size: 18px; /* Consistent font size for readability */
+  transition: color 0.3s, transform 0.2s; /* Smooth transition effect */
+  padding: 5px 10px; /* Add padding for clickable area */
+  border-radius: 4px; /* Rounded corners for links */
+}
+
+.auth-navbar a:hover {
+  background-color: #ff5722; /* Orange background on hover */
+  color: white; /* Change text color on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 /* Main Content Styles */
 .app-main {
-  flex: 1;
+  flex: 1; /* Fill available space */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px; /* Added padding */
+  justify-content: center; /* Center contents */
+  align-items: center; /* Center contents vertically */
+  border-radius: 8px; /* Rounded corners */
+  min-height: 70vh; /* Minimum height of the main area */
 }
 
 /* Footer Styles */
 .app-footer {
   text-align: center;
-  padding: 15px;
-  background-color: #212529;
-  color: #f8f9fa;
-  width: 100%;
+  padding: 15px 0;
+  color: white; /* Text color */
+  width: 100%; /* Full width */
   bottom: 0;
-  position: absolute;
+  position: absolute; /* Keep footer positioned relative */
 }
 
 /* Component Styles */
@@ -83,64 +136,195 @@ html, body {
 .text-to-speech-container, 
 .image-generator-container {
   width: 100%;
-  max-width: 800px; /* Increased max width for better layout */
-  padding: 30px; /* More padding for breathing room */
-  border-radius: 10px; /* More rounded corners */
-  background: #ffffff; /* Clean white background */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
-  margin: 20px auto; 
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  max-width: 600px; /* Max width for content */
+  padding: 20px; /* Padding for inner content */
+  border-radius: 8px; /* Rounded corners */
+  background: #fdfdfd; /* Slightly off-white for contrast */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin: 20px auto; /* Centered with margin for spacing */
+  text-align: center; /* Center text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Enhanced transitions */
 }
 
 .home-container:hover,
 .about-container:hover,
 .text-to-speech-container:hover,
 .image-generator-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
-  background-color: #e0f7fa; /* Change background color on hover */
+  transform: translateY(-5px); /* Lift the component on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  background-color: #e0f7fa; /* Change background color on hover for visual feedback */
 }
 
 /* Input Styles */
-.text-input, .image-generator-container input {
-  width: 100%;
-  padding: 15px; /* Increased padding for comfort */
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-sizing: border-box;
-  transition: border-color 0.3s, box-shadow 0.3s;
+.text-input {
+  width: 100%; /* Full width for inputs */
+  height: 150px; /* Input height */
+  padding: 10px; /* Inner padding */
+  margin: 10px 0; /* Margin around the input */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  resize: none; /* Disable resizing */
+  box-sizing: border-box; /* Include padding in total width */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth border color transition */
 }
 
-.text-input:focus, .image-generator-container input:focus {
-  border-color: #28a745; /* Highlight border on focus */
-  outline: none;
-  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Subtle shadow */
+.text-input:focus {
+  border-color: #4CAF50; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Add glow effect on focus */
 }
 
 /* Button Styles */
 button {
-  padding: 12px 20px; /* Increased padding */
-  background-color: #28a745; /* Updated button color */
-  color: #ffffff; 
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px; 
-  transition: background-color 0.3s, transform 0.2s;
+  padding: 10px 15px; /* Padding for buttons */
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s, transform 0.2s; /* Transition effects */
 }
 
 button:hover {
-  background-color: #218838; /* Darker green on hover */
-  transform: scale(1.05); /* Enlarge effect */
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Error Message Styles */
 .error-message {
-  color: red; 
-  text-align: center;
-  margin-top: 10px;
+  color: red; /* Red color for errors */
+  text-align: center; /* Center text */
+  margin-top: 10px; /* Space above the error message */
 }
 
-/* Review and other container styles can remain similar, just tweak the max-width and padding as necessary */
+/* Scrollbar Styles */
+.arrow {
+  position: fixed; /* Fix the scrollbar to the viewport */
+  right: 0; /* Align to the right side */
+  top: 100px; /* Adjust top position as needed */
+  height: 50px;
+  width: 8px; /* Set the width for the scrollbar */
+  background: rgba(255, 255, 255, 0.9); /* Background for the scrollbar */
+  border-radius: 8px; /* Rounded corners for aesthetics */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.arrow::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.arrow::-webkit-scrollbar-thumb {
+  background: #4CAF50; /* Color of the scrollbar thumb */
+  border-radius: 8px; /* Rounded corners for thumb */
+}
+
+.arrow::-webkit-scrollbar-track {
+  background: rgba(240, 240, 240, 0.8); /* Background of the scrollbar track */
+}
+/* Form Container Styles */
+.form-container {
+  width: 100%;
+  max-width: 400px; /* Max width for forms */
+  padding: 20px; /* Padding for inner content */
+  border-radius: 8px; /* Rounded corners */
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white for contrast */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin: 20px auto; /* Centered with margin for spacing */
+  text-align: center; /* Center text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Enhanced transitions */
+}
+
+.form-container:hover {
+  transform: translateY(-5px); /* Lift the component on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Input Styles for Forms */
+.form-input {
+  width: 100%; /* Full width for inputs */
+  height: 40px; /* Input height */
+  padding: 10px; /* Inner padding */
+  margin: 10px 0; /* Margin around the input */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding in total width */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth border color transition */
+}
+
+.form-input:focus {
+  border-color: #4CAF50; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Add glow effect on focus */
+}
+
+/* Button Styles for Forms */
+.form-button {
+  padding: 10px 15px; /* Padding for buttons */
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+  width: 100%; /* Full width for button */
+}
+
+.form-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Link Styles for switching between Signup and Signin */
+.switch-link {
+  display: block; /* Block display for better layout */
+  margin-top: 10px; /* Space above the link */
+  color: #4CAF50; /* Green color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.switch-link:hover {
+  color: #388E3C; /* Darker green on hover */
+}
+
+/* Error Message Styles specific to forms */
+.form-error-message {
+  color: red; /* Red color for errors */
+  text-align: center; /* Center text */
+  margin-top: 10px; /* Space above the error message */
+}
+.social-buttons {
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: center; /* Center the buttons */
+  margin: 20px 0; /* Margin around the buttons */
+}
+
+.social-button {
+  background: none; /* Remove default button styling */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin: 0 10px; /* Space between buttons */
+  border-radius: 50%; /* Make the button circular */
+  width: 50px; /* Fixed width for the circle */
+  height: 50px; /* Fixed height for the circle */
+  display: flex; /* Flex display to center the icon */
+  justify-content: center; /* Center the icon horizontally */
+  align-items: center; /* Center the icon vertically */
+  transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.social-button:hover {
+  background-color: rgba(76, 175, 80, 0.2); /* Light green background on hover */
+}
+
+.social-icon {
+  width: 24px; /* Adjust size of the icons */
+  height: auto; /* Maintain aspect ratio */
+  transition: opacity 0.3s; /* Smooth opacity transition */
+}
+
+.social-button:hover .social-icon {
+  opacity: 0.8; /* Slight opacity change on hover */
+}

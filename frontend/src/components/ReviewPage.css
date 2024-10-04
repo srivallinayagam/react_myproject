@@ -1,42 +1,43 @@
 .review-container {
     max-width: 1200px;
-    margin: 20px auto; /* Reduced top margin to move it upwards */
+    margin: 20px auto; /* Center the container and add margin */
     padding: 20px;
-    text-align: center;
+    text-align: center; /* Center text inside the container */
 }
 
 .review-title {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px; /* Reduced space below the title */
+    font-size: 2rem; /* Larger title */
+    color:white; /* Dark color for title */
+    margin-bottom: 20px; /* Space below the title */
 }
 
 .reviews-list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
 }
 
 .review-item {
-    flex: 1;
+    flex: 1; /* Allow items to grow */
     margin: 10px; /* Space around each review item */
-    padding: 20px;
+    padding: 20px; /* Inner padding */
     background-color: #fff; /* White background for each review */
-    border-radius: 8px; /* Increased rounded corners for individual review boxes */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for each review */
-    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s; /* Smooth transition effects */
 }
 
 .review-item:hover {
     transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    background-color: #e0f7fa; /* Light blue background on hover */
 }
 
 .review-text {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #444;
-    margin-bottom: 10px;
+    font-weight: bold; /* Bold text for the review */
+    font-size: 1.2rem; /* Font size for review text */
+    color: #444; /* Dark color for review text */
+    margin-bottom: 10px; /* Space below the review text */
 }
 
 .review-rating {
@@ -45,7 +46,7 @@
 }
 
 .star {
-    width: 24px; /* Adjust size as needed */
-    height: 24px; /* Adjust size as needed */
+    width: 24px; /* Size of the star */
+    height: 24px; /* Size of the star */
     margin: 0 2px; /* Space between stars */
 }
