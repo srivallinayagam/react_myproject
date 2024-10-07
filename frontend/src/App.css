@@ -43,7 +43,7 @@ body::before {
 
 .app-title {
   margin: 0; /* Remove margin for title */
-  font-size: 36px; /* Adjusted font size for title */
+  font-size: 2rem; /* Responsive font size */
   font-weight: bold; /* Make title bold */
   text-align: center; /* Center text */
   transition: transform 0.3s ease, text-shadow 0.3s ease; /* Transition for smooth effect */
@@ -67,6 +67,7 @@ body::before {
   display: flex;
   justify-content: center; /* Center navbar items */
   margin-top: 10px; /* Space between title and navbar */
+  flex-wrap: wrap; /* Allow items to wrap */
 }
 
 .navbar li {
@@ -82,14 +83,14 @@ body::before {
   text-decoration: none;
   color: white; /* Darker color for links */
   font-weight: bold;
-  font-size: 18px; /* Consistent font size for readability */
+  font-size: 1rem; /* Responsive font size */
   transition: color 0.3s, transform 0.2s; /* Smooth transition effect */
   padding: 5px 10px; /* Add padding for clickable area */
   border-radius: 4px; /* Rounded corners for links */
 }
 
 .navbar a:hover {
-  background-color: rgba(76, 175, 80, 0.8); /* Green background on hover */
+  background-color: #8e44ad;
   color: white; /* Change text color on hover */
   transform: scale(1.1); /* Slightly enlarge link on hover */
 }
@@ -167,7 +168,7 @@ button, .form-button {
   border: none; /* Remove border */
   border-radius: 4px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
-  font-size: 16px; /* Font size */
+  font-size: 1rem; /* Responsive font size */
   transition: background-color 0.3s, transform 0.2s; /* Transition effects */
   width: auto; /* Auto width for buttons */
 }
@@ -229,7 +230,7 @@ button:hover, .form-button:hover {
 
 /* Heading Styles */
 .form-title {
-  font-size: 24px; /* Larger title font size */
+  font-size: 1.5rem; /* Responsive title font size */
   margin-bottom: 20px; /* Space below title */
   color: #333; /* Darker color for title */
 }
@@ -260,7 +261,7 @@ button:hover, .form-button:hover {
   border: none; /* Remove border */
   border-radius: 8px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
-  font-size: 16px; /* Font size */
+  font-size: 1rem; /* Responsive font size */
   transition: background-color 0.3s, transform 0.2s; /* Transition effects */
   width: 100%; /* Full width for button */
 }
@@ -286,6 +287,7 @@ button:hover, .form-button:hover {
   display: flex; /* Use flexbox for horizontal layout */
   justify-content: center; /* Center the buttons */
   margin: 20px 0; /* Margin around the buttons */
+  flex-wrap: wrap; /* Allow buttons to wrap */
 }
 
 .social-button {
@@ -303,7 +305,6 @@ button:hover, .form-button:hover {
 }
 
 .social-button:hover {
-  /* Remove background color change on hover */
   background-color: transparent; /* Keep the background transparent */
   transform: scale(1.05); /* Optionally, you can scale slightly on hover */
 }
@@ -319,4 +320,19 @@ button:hover, .form-button:hover {
   color: red; /* Red color for errors */
   text-align: center; /* Center text */
   margin-top: 10px; /* Space above the error message */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 1.5rem; /* Smaller font size for smaller screens */
+  }
+
+  .navbar a {
+    font-size: 0.9rem; /* Smaller font size for navbar links */
+  }
+
+  .form-title {
+    font-size: 1.2rem; /* Smaller title font size for forms */
+  }
 }
