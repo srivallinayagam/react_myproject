@@ -1,17 +1,27 @@
 from flask import Flask, request, send_file, jsonify
 from flask_cors import CORS
 from gtts import gTTS
-import os
-import numpy as np
+import requests
+import io
 from PIL import Image
-import tensorflow as tf
-from tensorflow.keras.models import load_model
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-# Load the trained image generation model
-model = load_model('fruit_model.h5')
+# Hugging Face API configuration
+API_URL = "https://api-inference.huggingface.co/models/OnomaAIResearch/Illustrious-xl-early-release-v0"
+headers = {"Authorization": "Bearer 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"}  # Replace with your actual token
+
+def query(payload):
+    try:
+        response = requests.post(API_URL, headers=headers, json=payload)
+        if response.status_code == 200:
+            return response.content
+        else:
+            raise Exception("Failed to generate image: " + response.text)
+    except Exception as e:
+        print(f"Error in query: {e}")  # Log the error for debugging
+        return None
 
 @app.route('/convert', methods=['POST'])
 def convert_text_to_voice():
@@ -31,16 +41,25 @@ def convert_text_to_voice():
 
 @app.route('/generate-image', methods=['POST'])
 def generate_image():
+    data = request.json
+    prompt = data.get('prompt')
+
+    if not prompt:
+        return jsonify({"error": "No prompt provided"}), 400
+
     try:
-        # Generate a random image for demonstration purposes
-        random_image = np.random.rand(150, 150, 3) * 255
-        img = Image.fromarray(random_image.astype('uint8'))
+        # Generate the image using the Hugging Face API
+        image_bytes = query({"inputs": prompt})
+        
+        if image_bytes is None:
+            return jsonify({"error": "Failed to generate image"}), 500
 
-        # Save the image to a file
+        # Load the image from bytes
+        image = Image.open(io.BytesIO(image_bytes))
         img_path = "generated_image.png"
-        img.save(img_path)
+        image.save(img_path)
 
-        return send_file(img_path, as_attachment=True)
+        return send_file(img_path, mimetype='image/png')
     
     except Exception as e:
         return jsonify({"error": str(e)}), 500

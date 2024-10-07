@@ -53,7 +53,7 @@
 }
 
 .image-generator-container button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #003366; /* Darker green on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
@@ -63,4 +63,30 @@
     border-radius: 20px; /* Ensure consistency with input */
     font-weight: bold;
     color: #ffffff;
+}
+
+/* Styles for the generated image */
+.generated-image {
+    margin-top: 15px; /* Space between the button and the generated image */
+    text-align: center; /* Center the image and title */
+}
+
+.generated-image img {
+    max-width: 100%; /* Responsive width */
+    max-height: 280px; /* Set a max height to keep it small */
+    border-radius: 8px; /* Optional: rounded corners for the image */
+}
+.download-button {
+    padding: 10px 15px;
+    background-color: #003366; /* Updated to the specified color */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+}
+
+.download-button:hover {
+    background-color: #002244; /* Darker shade on hover for contrast */
 }

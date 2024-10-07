@@ -2,31 +2,49 @@ import React, { useState } from 'react';
 import './ImageGenerator.css'; // Make sure to import your CSS file
 
 const ImageGenerator = () => {
-    const [imageName, setImageName] = useState('');
+    const [imagePrompt, setImagePrompt] = useState('');
     const [generatedImage, setGeneratedImage] = useState('');
 
     const handleInputChange = (event) => {
-        setImageName(event.target.value);
+        setImagePrompt(event.target.value);
     };
 
     const handleGenerateImage = async () => {
-        if (!imageName) {
-            alert("Please enter a name for the image.");
+        if (!imagePrompt) {
+            alert("Please enter a prompt for the image.");
             return;
         }
 
         try {
-            // Replace this URL with your actual image generation API endpoint
-            const response = await fetch(`https://api.example.com/generate-image?name=${encodeURIComponent(imageName)}`);
+            const response = await fetch('http://localhost:5000/generate-image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ prompt: imagePrompt }),
+            });
             
             if (!response.ok) {
-                throw new Error("Failed to generate image");
+                const errorData = await response.json();
+                throw new Error(errorData.error || "Failed to generate image");
             }
 
-            const data = await response.json();
-            setGeneratedImage(data.imageUrl); // Assuming the API returns an image URL in this format
+            const imageBlob = await response.blob();
+            const imageUrl = URL.createObjectURL(imageBlob);
+            setGeneratedImage(imageUrl); // Set the generated image URL for display
         } catch (error) {
             alert("Error generating image: " + error.message);
+        }
+    };
+
+    const handleDownload = () => {
+        if (generatedImage) {
+            const a = document.createElement('a');
+            a.href = generatedImage;
+            a.download = 'generated_image.png'; // Set the default file name
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         }
     };
 
@@ -36,8 +54,8 @@ const ImageGenerator = () => {
             <input
                 type="text" 
                 className="input" // Apply the input class here
-                placeholder='Enter the name of the image' 
-                value={imageName}
+                placeholder='Enter your prompt for the image' 
+                value={imagePrompt}
                 onChange={handleInputChange}
             />
             <button onClick={handleGenerateImage}>Generate Image</button>
@@ -45,7 +63,15 @@ const ImageGenerator = () => {
             {generatedImage && (
                 <div className="generated-image">
                     <h2>Generated Image:</h2>
-                    <img src={generatedImage} alt={imageName} />
+                    <img src={generatedImage} alt={imagePrompt} />
+                    <div style={{ marginTop: '20px' }}>
+                        <button 
+                            className="download-button" // Added class here
+                            onClick={handleDownload}
+                        >
+                            Download Image
+                        </button>
+                    </div>
                 </div>
             )}
         </div>
