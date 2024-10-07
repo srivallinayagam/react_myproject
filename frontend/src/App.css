@@ -300,6 +300,7 @@ button:hover, .form-button:hover {
   margin-top: 10px; /* Space above the link */
   text-decoration: none; /* Remove underline */
   transition: color 0.3s; /* Smooth color transition */
+  color: #E6E6FA;
 }
 
 .switch-link:hover {
