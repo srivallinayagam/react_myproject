@@ -4,30 +4,35 @@
 }
 
 .home-container {
-  background-color: #f0f8ff; /* Light blue background for home */
+  background-color: rgba(240, 248, 255, 0.8); /* Light blue with transparency */
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
   margin-bottom: 20px; /* Space below the home container */
-  font-family: sans-serif; /* Apply sans-serif font */
+  font-family: 'Arial', sans-serif; /* Apply a modern sans-serif font */
 }
 
 .welcome-container {
   padding: 15px; /* Padding for the welcome box */
   border-radius: 8px; /* Rounded corners */
-  font-family: sans-serif; /* Apply sans-serif font */
+  font-family: 'Arial', sans-serif; /* Apply sans-serif font */
+  font-weight: bold;
+  color: #ffffff; /* Bright white for better visibility */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
 }
 
 .reviews-container {
   padding: 20px; /* Padding for the reviews box */
   border-radius: 8px; /* Rounded corners */
   margin-top: 20px; /* Space above the reviews section */
-  font-family: sans-serif; /* Apply sans-serif font */
+  font-family: 'Arial', sans-serif; /* Apply sans-serif font */
+  color: #ffffff; /* Bright white for better visibility */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
 }
+
 .home-image {
-  max-width: 100%;
-  height: auto;
+  max-width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
   margin: 20px 0; /* Adjust margin as needed */
-  display: block;
-  /* Add more styles as needed */
+  display: block; /* Center the image block */
 }

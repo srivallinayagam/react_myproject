@@ -2,22 +2,29 @@
     max-width: 600px;
     margin: 40px auto;
     padding: 30px;
-    background: #fdfdfd;
+    background: rgba(255, 255, 255, 0.1); /* Light translucent background */
     border-radius: 12px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for depth */
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+}
+.contact-container p{
+        font-weight: bold;
+        color: #ffffff;
 }
 
 .contact-container:hover {
     transform: scale(1.02); /* Slight scale effect on hover */
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+    font-weight: bold;
+    color: #ffffff;
 }
 
 .contact-title {
     font-size: 2rem;
-    color: #333;
+    color: #ffffff; /* Bright white for better visibility */
     margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
 }
 
 .contact-form {
@@ -26,16 +33,28 @@
     gap: 20px;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     padding: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
     border-radius: 8px;
     width: 100%;
     box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.2); /* Light translucent background */
+    color: #ffffff; /* White text for inputs */
     transition: border-color 0.3s, box-shadow 0.3s; /* Transition for inputs */
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    font-weight: bold; /* Bold placeholder text */
+    color: #ffffff; /* White placeholder color */
+    opacity: 1; /* Ensures full opacity */
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus {
     border-color: #4CAF50; /* Highlight border on focus */
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Glow effect on focus */
     outline: none; /* Remove default outline */
@@ -43,8 +62,8 @@
 
 .contact-form button {
     padding: 12px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -52,6 +71,14 @@
 }
 
 .contact-form button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Darker green on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Feedback message styles */
+.feedback-message {
+    color: #ffffff; /* White text for feedback */
+    font-weight: bold; /* Bold text */
+    margin-top: 20px; /* Space above the feedback message */
+    text-align: center; /* Center the text */
 }

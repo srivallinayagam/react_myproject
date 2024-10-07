@@ -1,5 +1,5 @@
 .image-generator-container {
-    background-color: #d4edda; /* Light green background for image generator */
+    background-color: rgba(212, 237, 218, 0.9); /* Light green with some transparency for background */
     padding: 15px; /* Reduced padding for a lower height */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -12,17 +12,20 @@
 
 .image-generator-container h1 {
     margin-bottom: 15px; /* Reduced space between title and input */
+    color: #ffffff; /* Darker color for better contrast */
 }
 
 .image-generator-container input {
     width: 100%; /* Full width input */
     padding: 10px; /* Slightly reduced padding */
     margin-bottom: 10px; /* Reduced space between input and button */
-    border: 1px solid #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
     border-radius: 20px; /* More pronounced rounded corners */
     font-size: 16px; /* Increase font size for readability */
     box-sizing: border-box; /* Include padding in total width */
     transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    background: rgba(255, 255, 255, 0.2); /* Light translucent background */
+    color: #ffffff; /* White text for input */
 }
 
 /* Add focus effects for input */
@@ -30,6 +33,12 @@
     border-color: #4CAF50; /* Change border color on focus */
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Subtle shadow on focus */
     outline: none; /* Remove default outline */
+}
+
+/* Placeholder styles */
+.image-generator-container input::placeholder {
+    color: #ffffff; /* White placeholder text color */
+    opacity: 0.7; /* Slightly reduce opacity for subtlety */
 }
 
 .image-generator-container button {
@@ -52,4 +61,6 @@
     display: flex;
     border: none;
     border-radius: 20px; /* Ensure consistency with input */
+    font-weight: bold;
+    color: #ffffff;
 }
