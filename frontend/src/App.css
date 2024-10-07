@@ -18,7 +18,7 @@ body::before {
   left: 0; /* Align to the left */
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  background-image: url('./assets/a.jpg'); /* Ensure this path is correct for your image */
+  background-image: url('./assets/aurora.jpg'); /* Ensure this path is correct for your image */
   background-size: cover; /* Cover the entire body */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent repeating */
@@ -248,7 +248,7 @@ button:hover, .form-button:hover {
 }
 
 .form-input:focus {
-  border-color: #4CAF50; /* Highlight border on focus */
+  border-color: #003366; /* Highlight border on focus */
   outline: none; /* Remove default outline */
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Add glow effect on focus */
 }
@@ -256,7 +256,7 @@ button:hover, .form-button:hover {
 /* Button Styles for Forms */
 .form-button {
   padding: 12px 15px; /* Padding for buttons */
-  background-color: #4CAF50; /* Green background */
+  background-color: #003366; /* Green background */
   color: white; /* White text */
   border: none; /* Remove border */
   border-radius: 8px; /* Rounded corners */
@@ -267,7 +267,7 @@ button:hover, .form-button:hover {
 }
 
 .form-button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #007bb8; /* Darker green on hover */
   transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
