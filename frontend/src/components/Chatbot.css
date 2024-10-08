@@ -1,0 +1,102 @@
+/* Chatbot Container Styles */
+.chatbot-container {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1); /* Light background with transparency */
+    padding: 20px; /* Comfortable padding */
+    border-radius: 12px; /* Smooth rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Softer shadow for depth */
+    max-width: 550px; /* Max width for better layout */
+    margin: auto; /* Centered container */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect for chatbot container */
+.chat-history:hover {
+    transform: translateY(-5px); /* Lift the component on hover */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 255, 255, 0.4)); /* Gradient for aurora effect */
+}
+
+/* Header Styles */
+.chatbot-container h1 {
+    margin-bottom: 15px; /* Space between title and chat history */
+    color: #ffffff; /* Better contrast for title */
+}
+
+/* Chat History Styles */
+.chat-history {
+    width: 100%;
+    height: 280px; /* Fixed height for chat history */
+    overflow-y: auto; /* Scrollable area */
+    background-color: rgba(255, 255, 255, 0.2); /* Light translucent background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Inner padding */
+    margin-bottom: 15px; /* Space below chat history */
+}
+
+/* Chat Entry Styles */
+.chat-entry {
+    margin: 5px 0; /* Space between chat entries */
+    border-radius: 4px; /* Rounded corners */
+    padding: 8px; /* Padding for chat entry */
+}
+
+/* User and Bot Message Styles */
+.chat-entry.user {
+    background-color: rgba(76, 175, 80, 0.5); /* User message color */
+    color: white; /* Text color */
+    text-align: right; /* Align user messages to the right */
+}
+
+.chat-entry.bot {
+    background-color: rgba(0, 123, 255, 0.5); /* Bot message color */
+    color: white; /* Text color */
+}
+
+/* Input Styles */
+.chatbot-container input {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Inner padding */
+    margin-bottom: 10px; /* Space between input and button */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+    border-radius: 20px; /* More pronounced rounded corners */
+    font-size: 16px; /* Increased font size for readability */
+    box-sizing: border-box; /* Include padding in total width */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    background: rgba(255, 255, 255, 0.2); /* Light translucent background */
+    color: #ffffff; /* White text for input */
+}
+
+/* Focus effects for input */
+.chatbot-container input:focus {
+    border-color: #4CAF50; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Subtle shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Placeholder styles */
+.chatbot-container input::placeholder {
+    color: #ffffff; /* White placeholder text color */
+    opacity: 0.7; /* Subtle opacity */
+}
+
+/* Button Styles */
+.chatbot-button {
+    padding: 12px 15px; /* Comfortable padding for button */
+    background-color: #4CAF50; /* Initial button background color */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 20px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Increased font size */
+    transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+    width: 100%; /* Full width for button */
+}
+
+.chatbot-button:hover {
+    background-color: #003366; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}

@@ -7,6 +7,7 @@ import About from './components/About';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import ContactPage from './components/ContactPage'; // Import ContactPage
+import Chatbot from './components/Chatbot'; // Import Chatbot component
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                                 <li><Link to="/">Home</Link></li>
                                 <li><Link to="/text-to-speech">Text to Speech</Link></li>
                                 <li><Link to="/image-generator">Image Generator</Link></li>
+                                <li><Link to="/chatbot">Chatbot</Link></li> {/* Added Chatbot Link */}
                                 <li><Link to="/about">About</Link></li>
                                 <li><Link to="/contact">Contact Us</Link></li> {/* Add Contact Link */}
                                 <li><Link to="/signin">Sign In</Link></li>
@@ -38,6 +40,7 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/text-to-speech" element={<TextToSpeech />} />
                         <Route path="/image-generator" element={<ImageGenerator />} />
+                        <Route path="/chatbot" element={<Chatbot />} /> {/* Add Route for Chatbot */}
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<ContactPage />} /> {/* Add Route for ContactPage */}
                         <Route path="/signin" element={<SignIn />} />
