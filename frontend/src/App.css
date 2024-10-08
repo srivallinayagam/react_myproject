@@ -1,9 +1,10 @@
 /* General Styles */
 html, body {
-  height: 100%; /* Full height for the HTML and body */
+  height: 100%; /* Full height for HTML and body */
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
   font-family: 'Arial', sans-serif; /* Modern sans-serif font */
+  overflow: hidden; /* Prevent scrollbar on the main body */
 }
 
 body {
@@ -23,6 +24,7 @@ body::before {
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent repeating */
   z-index: -1; /* Send it behind other content */
+  filter: blur(2px); /* Add a subtle blur effect */
 }
 
 .app-container {
@@ -43,22 +45,15 @@ body::before {
 
 .app-title {
   margin: 0; /* Remove margin for title */
-  font-size: 2rem; /* Responsive font size */
+  font-size: 2.5rem; /* Responsive font size */
   font-weight: bold; /* Make title bold */
   text-align: center; /* Center text */
   transition: transform 0.3s ease, text-shadow 0.3s ease; /* Transition for smooth effect */
 }
 
 .app-title:hover {
-  transform: translateY(-5px) scale(1.05); /* Lift and enlarge on hover */
-  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-}
-
-/* Navbar Styles */
-.navbar-container {
-  padding: 10px; /* Padding inside the navbar box */
-  border-radius: 8px; /* Rounded corners for the navbar box */
-  transition: background-color 0.3s; /* Smooth background transition */
+  transform: translateY(-5px) scale(1.1); /* Lift and enlarge on hover */
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7); /* Add shadow for depth */
 }
 
 .navbar {
@@ -84,15 +79,14 @@ body::before {
   color: white; /* Darker color for links */
   font-weight: bold;
   font-size: 1rem; /* Responsive font size */
-  transition: color 0.3s, transform 0.2s; /* Smooth transition effect */
-  padding: 5px 10px; /* Add padding for clickable area */
+  padding: 10px 15px; /* Padding for clickable area */
   border-radius: 4px; /* Rounded corners for links */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition effect */
 }
 
 .navbar a:hover {
-  background-color: #8e44ad;
-  color: white; /* Change text color on hover */
-  transform: scale(1.1); /* Slightly enlarge link on hover */
+  background-color: rgba(142, 68, 173, 0.8); /* Slightly darker color on hover */
+  transform: scale(1.05); /* Slightly enlarge link on hover */
 }
 
 /* Main Content Styles */
@@ -124,12 +118,12 @@ body::before {
   width: 100%;
   max-width: 600px; /* Max width for content */
   padding: 20px; /* Padding for inner content */
-  border-radius: 8px; /* Rounded corners */
-  background: rgba(255, 255, 255, 0.1); /* Light translucent background */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 12px; /* More rounded corners */
+  background: rgba(255, 255, 255, 0.15); /* Light translucent background */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Softer shadow */
   margin: 20px auto; /* Centered with margin for spacing */
   text-align: center; /* Center text */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Enhanced transitions */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Enhanced transitions */
   color: #ffffff;
 }
 
@@ -138,7 +132,7 @@ body::before {
 .text-to-speech-container:hover,
 .image-generator-container:hover {
   transform: translateY(-5px); /* Lift the component on hover */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 255, 255, 0.4)); /* Gradient for aurora effect */
 }
 
@@ -153,12 +147,12 @@ body::before {
   resize: none; /* Disable resizing */
   box-sizing: border-box; /* Include padding in total width */
   transition: border-color 0.3s, box-shadow 0.3s; /* Smooth border color transition */
-  background: rgba(255, 255, 255, 0.1); /* Light translucent background */
+  background: rgba(255, 255, 255, 0.15); /* Light translucent background */
   color: white; /* White text for inputs */
 }
 
 .text-input::placeholder, .form-input::placeholder {
-  color: rgba(255, 255, 255, 0.6); /* Placeholder text color for contrast */
+  color: rgba(255, 255, 255, 0.7); /* Placeholder text color for contrast */
 }
 
 .text-input:focus, .form-input:focus {
@@ -169,11 +163,11 @@ body::before {
 
 /* Button Styles */
 button, .form-button {
-  padding: 10px 15px; /* Padding for buttons */
+  padding: 12px 20px; /* Padding for buttons */
   background-color: #4CAF50; /* Green background */
   color: white; /* White text */
   border: none; /* Remove border */
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 6px; /* Slightly more rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
   font-size: 1rem; /* Responsive font size */
   transition: background-color 0.3s, transform 0.2s; /* Transition effects */
@@ -195,11 +189,11 @@ button:hover, .form-button:hover {
 /* Scrollbar Styles */
 .arrow {
   position: fixed; /* Fix the scrollbar to the viewport */
-  right: 0; /* Align to the right side */
+  right: 10px; /* Align to the right side */
   top: 100px; /* Adjust top position as needed */
   height: 50px;
   width: 8px; /* Set the width for the scrollbar */
-  background: rgba(255, 255, 255, 0.9); /* Background for the scrollbar */
+  background: rgba(255, 255, 255, 0.8); /* Background for the scrollbar */
   border-radius: 8px; /* Rounded corners for aesthetics */
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
@@ -223,8 +217,8 @@ button:hover, .form-button:hover {
   max-width: 400px; /* Max width for forms */
   padding: 30px; /* Increased padding for comfort */
   border-radius: 12px; /* More rounded corners for a modern look */
-  background: rgba(255, 255, 255, 0.1); /* Light translucent background */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  background: rgba(255, 255, 255, 0.15); /* Light translucent background */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Softer shadow */
   margin: 40px auto; /* Centered with margin for spacing */
   text-align: center; /* Center text */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Enhanced transitions */
@@ -233,12 +227,12 @@ button:hover, .form-button:hover {
 
 .form-container:hover {
   transform: translateY(-8px); /* Lift the component more on hover */
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
 }
 
 /* Title Styles */
 .form-title {
-  font-size: 1.5rem; /* Responsive title font size */
+  font-size: 1.8rem; /* Responsive title font size */
   margin-bottom: 20px; /* Space below title */
   color: white; /* Ensure title color is visible */
 }
@@ -253,14 +247,13 @@ button:hover, .form-button:hover {
   border-radius: 8px; /* Rounded corners */
   box-sizing: border-box; /* Include padding in total width */
   transition: border-color 0.3s, box-shadow 0.3s; /* Smooth border color transition */
-  background: rgba(255, 255, 255, 0.1); /* Light translucent background */
+  background: rgba(255, 255, 255, 0.15); /* Light translucent background */
   color: white; /* White text for inputs */
 }
 
 .form-input::placeholder {
-  color: rgba(255, 255, 255, 0.6); /* Placeholder text color for contrast */
+  color: rgba(255, 255, 255, 0.7); /* Placeholder text color for contrast */
   font-weight: bold;
-  color: #ffffff;
 }
 
 .form-input:focus {
@@ -300,7 +293,7 @@ button:hover, .form-button:hover {
   margin-top: 10px; /* Space above the link */
   text-decoration: none; /* Remove underline */
   transition: color 0.3s; /* Smooth color transition */
-  color: #E6E6FA;
+  color: #E6E6FA; /* Soft link color */
 }
 
 .switch-link:hover {
@@ -326,12 +319,12 @@ button:hover, .form-button:hover {
   display: flex; /* Flex display to center the icon */
   justify-content: center; /* Center the icon horizontally */
   align-items: center; /* Center the icon vertically */
-  transition: transform 0.3s; /* Smooth scale transition */
+  transition: transform 0.3s, background-color 0.3s; /* Smooth scale transition */
 }
 
 .social-button:hover {
-  background-color: transparent; /* Keep the background transparent */
-  transform: scale(1.05); /* Optionally, you can scale slightly on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 .social-icon {

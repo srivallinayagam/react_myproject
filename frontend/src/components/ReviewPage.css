@@ -1,14 +1,13 @@
 .review-container {
     max-width: 1200px;
-    margin: 20px auto; /* Center the container and add margin */
-    padding: 20px;
+    padding: 10px;
     text-align: center; /* Center text inside the container */
 }
 
 .review-title {
     font-size: 2rem; /* Larger title */
     color: white; /* Text color */
-    margin-bottom: 20px; /* Space below the title */
+    margin-bottom: 10px; /* Space below the title */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add shadow to title for depth */
 }
 
