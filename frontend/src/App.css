@@ -27,6 +27,7 @@ body::before {
   filter: blur(2px); /* Add a subtle blur effect */
 }
 
+/* App Container */
 .app-container {
   height: 100%; /* Fill available height */
   display: flex;
@@ -35,12 +36,11 @@ body::before {
 
 /* Header Styles */
 .app-header {
-  color: white; /* Text color */
-  padding: 20px 0; /* Padding for header */
-  display: flex;
-  flex-direction: column; /* Stack title and navbar */
-  align-items: center; /* Center items horizontally */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add shadow to header text */
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .app-title {
@@ -56,6 +56,7 @@ body::before {
   text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7); /* Add shadow for depth */
 }
 
+/* Navbar Styles */
 .navbar {
   list-style: none;
   padding: 0;
@@ -67,6 +68,8 @@ body::before {
 
 .navbar li {
   margin: 0 20px; /* Adjusted horizontal spacing */
+  padding: 10px 2px; /* Padding for navbar items */
+  background-color: rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease; /* Smooth transition for list items */
 }
 
@@ -76,7 +79,7 @@ body::before {
 
 .navbar a {
   text-decoration: none;
-  color: white; /* Darker color for links */
+  color: white; /* Color for links */
   font-weight: bold;
   font-size: 1rem; /* Responsive font size */
   padding: 10px 15px; /* Padding for clickable area */
@@ -85,7 +88,7 @@ body::before {
 }
 
 .navbar a:hover {
-  background-color: rgba(142, 68, 173, 0.8); /* Slightly darker color on hover */
+  background-color: rgba(142, 68, 173, 0.8); /* Darker color on hover */
   transform: scale(1.05); /* Slightly enlarge link on hover */
 }
 
@@ -195,7 +198,6 @@ button:hover, .form-button:hover {
   width: 8px; /* Set the width for the scrollbar */
   background: rgba(255, 255, 255, 0.8); /* Background for the scrollbar */
   border-radius: 8px; /* Rounded corners for aesthetics */
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
 .arrow::-webkit-scrollbar {
@@ -215,6 +217,7 @@ button:hover, .form-button:hover {
 .form-container {
   width: 100%;
   max-width: 400px; /* Max width for forms */
+  padding: 30px; /* Increased padding for comfort */
   padding: 30px; /* Increased padding for comfort */
   border-radius: 12px; /* More rounded corners for a modern look */
   background: rgba(255, 255, 255, 0.15); /* Light translucent background */
@@ -297,7 +300,7 @@ button:hover, .form-button:hover {
 }
 
 .switch-link:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Underline effect on hover */
 }
 
 /* Social Button Styles */
