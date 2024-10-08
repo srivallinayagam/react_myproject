@@ -5,6 +5,9 @@ import requests
 import io
 from PIL import Image
 from huggingface_hub import InferenceClient
+from langdetect import detect, DetectorFactory
+
+DetectorFactory.seed = 0
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -55,9 +58,14 @@ def convert_text_to_voice():
 
     if text:
         try:
-            tts = gTTS(text=text, lang='en')
-            tts.save("myvoice.mp3")
-            return send_file("myvoice.mp3", as_attachment=True)
+            # Detect the language of the input text
+            lang = detect(text)
+
+            # Convert text to speech using gTTS
+            tts = gTTS(text=text, lang=lang)
+            audio_file_path = "myvoice.mp3"
+            tts.save(audio_file_path)
+            return send_file(audio_file_path, as_attachment=True)
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 

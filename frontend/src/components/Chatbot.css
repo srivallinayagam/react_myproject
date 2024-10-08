@@ -14,7 +14,7 @@
 }
 
 /* Hover effect for chatbot container */
-.chat-history:hover {
+.chat-history.chat-history:hover {
     transform: translateY(-5px); /* Lift the component on hover */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 255, 255, 0.4)); /* Gradient for aurora effect */
